@@ -31,6 +31,7 @@ class LandmarksController < ApplicationController
 
   post '/landmark/:id' do
     landmark = Landmark.find_by(id: params[:id])
+    
   end
 
 end
