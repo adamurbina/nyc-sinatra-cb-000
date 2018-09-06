@@ -2,4 +2,7 @@
   <% @figures.each do |figure| %>
     <%=figure.name %><br>
   <% end %>
+  <% @figures.landmarks.each do |landmark| %>
+    <%=landmark.name %><br>
+  <% end %>
 </html>
