@@ -5,6 +5,12 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/index'
   end
 
+  get '/landmarks/new' do
+    @titles = Title.all
+    @figures = Figure.all
+    erb :'/landmarks/new'
+  end
+
   get '/landmarks/:id' do
     @landmark = Landmark.find_by(id: params[:id])
     erb :'/landmarks/show'
@@ -17,11 +23,7 @@ class LandmarksController < ApplicationController
     erb :'/landmarks/edit'
   end
 
-  get '/landmarks/new' do
-    @titles = Title.all
-    @figures = Figure.all
-    erb :'/landmarks/new'
-  end
+
 
   post 'landmarks' do
     new_landmark = Landmark.create(name: params[:landmark][:name], year_completed: params[:landmark][:year_completed])
