@@ -29,7 +29,7 @@ class LandmarksController < ApplicationController
     redirect "/landmarks/#{new_landmark.id}"
   end
 
-  post '/landmark/:id' do
+  post '/landmarks/:id' do
     landmark = Landmark.find_by(id: params[:id])
     landmark.name = params[:landmark][:name]
     landmark.year_completed = params[:landmark][:year_completed]
